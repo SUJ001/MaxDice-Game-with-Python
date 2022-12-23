@@ -1,0 +1,41 @@
+import random
+
+print("Hello! Welcome to the max dice game :)")
+r1= random.randint(1,6)
+r2= random.randint(1,6)
+
+pl1 = input("Enter the name of player 1: ")
+pl2 = input("Enter the name of player 2: ")
+
+p1=0;
+p2=0;
+
+EndGame= False
+
+while EndGame==False:
+    print("Rolling "+ pl1+"'s dice.....")
+    p= random.randint(1,6)
+    print("Hehe! "+pl1+" got number "+ str(p))
+    print("Its "+pl2+"'s turn now, rolling......")
+    q= random.randint(1,6)
+    print("Its "+str(q)+" for "+pl2)
+    if p>q:
+        print("Congrats "+pl1+" for this round")
+        p1 += 1
+    elif q>p:
+        print("Congrats " + pl2 + " for this round")
+        p2 += 1
+    else:
+        print("Oh!oh! Looks like no one got this round for themselves.")
+    cont= input("Does both of you geniuses:) wish to continue playing??(Y/N)")
+    if cont=="N":
+        EndGame= True
+
+print("Thanks for playing^.^!!! Here are the total number of rounds you guys won: ")
+print(pl1+ ": "+str(p1)+"      "+pl2+ ": "+str(p2))
+if p1>p2:
+    print("Congratulations "+pl1+"!! for winning the maxd game")
+elif p2>p1:
+    print("Congratulations " + pl2 + "!! for winning the maxd game")
+else:
+    print("HaHa! Guess both of guys won ^,^")
